@@ -21,6 +21,11 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: php-example:${CICD_EXECUTION_SEQUENCE}
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: phpexample:v1
+      registry: 127.0.0.1:34125
 - name: Deploy
   steps:
   - applyYamlConfig:
